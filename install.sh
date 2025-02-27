@@ -2,7 +2,7 @@
 
 # installation de netbeans 
 
-#Mise a jour de la base des packets 
+#Mise a jour de la base des paquets 
 sudo apt update -y 
 
 #Aller dans le dossier opt
