@@ -13,3 +13,17 @@ sudo wget https://dlcdn.apache.org/netbeans/netbeans-installers/25/apache-netbea
  
 sudo apt install ./apache-netbeans_25-1_all.deb 
 
+#installation Git 
+sudo apt update
+sudo apt install git
+#Pour Debian / linux 
+apt-get install git
+# savoir la version installer 
+git --version
+# Pour configurer 
+git config --global user.name ""
+
+git config --global user.email ""
+
+#Vérifier les paramètres
+git config --list
