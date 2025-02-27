@@ -1,10 +1,8 @@
 #!/bin/bash
-
-#installation Git 
+#Mise à jour 
 sudo apt update
+#installation Git 
 sudo apt install git
-#Pour Debian / linux 
-apt-get install git
 # savoir la version installer 
 git --version
 # Pour configurer 
