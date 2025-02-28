@@ -2,11 +2,18 @@
 # Mise à jour système 
 sudo apt update 
 # Java est déjà installé version 17.0.14 2025-01-21
-#Installez le serveur Web Apache Tomcat
-sudo wget https://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.16/bin/apache-tomcat-9.0.16.tar.gz
-#sudo apt install tomcat10 tomcat10-admin tomcat10-docs tomcat10-examples
-#Démarrage du service Tomcat
-sudo systemctl enable tomcat10
-sudo systemctl start tomcat10
+#Installez  Tomcat
+sudo apt install -y tomcat9 tomcat9-admin
+#Démarrer Tomcat
+sudo systemctl start tomcat9
+#Activer Tomcat au démarrage
+sudo systemctl enable tomcat9
 # Vérifier le status 
-sudo systemctl status tomcat
+sudo systemctl status tomcat9
+#Arrêter Tomca
+#sudo systemctl stop tomcat9
+
+
+
+
+
