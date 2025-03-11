@@ -10,8 +10,7 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/packages-pgadmin-org.gpg] h
 
 #
 # Install pgAdmin
-# Mise à jour 
-sudo apt update
+
 # Install for both desktop and web modes:
 sudo apt install pgadmin4
 
