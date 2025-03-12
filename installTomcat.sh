@@ -1,15 +1,8 @@
 #!/bin/bash
-# Script d'installation de Tomcat 9 
+# Script d'installation de Tomcat 9 avec apt-get
 
-# Mise à jour système 
-sudo apt update
-# Installation de Java si non installé
-sudo apt install default-jdk
-java -version
-
-openjdk version "17.0.8" 2023-07-18
-OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
-OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
+# Mise à jour du système
+sudo apt update && sudo apt upgrade -y
 
 # Installation de Tomcat 9 et des outils d'administration
 echo "Installation de Tomcat 9..."
@@ -21,7 +14,7 @@ sudo systemctl start tomcat9
 sudo systemctl enable tomcat9
 
 # Vérifier le statut du service
-sudo systemctl status tomcat9 
+sudo systemctl status tomcat9 --no-pager
 
 # Afficher l'adresse d'accès à l'interface d'administration
 echo "Tomcat 9 est installé et en cours d'exécution."
