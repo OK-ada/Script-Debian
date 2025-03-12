@@ -1,58 +1,31 @@
 #!/bin/bash
+# Script d'installation de Tomcat 9 
+
 # Mise à jour système 
-sudo apt update 
-# Java est déjà installé version 17.0.14 2025-01-21
+sudo apt update
 # Installation de Java si non installé
-if ! java -version &>/dev/null; then
-    echo "Java n'est pas installé. Installation en cours..."
-    sudo apt install -y default-jdk
-fi
+sudo apt install default-jdk
+java -version
 
-# Définition des variables
-TOMCAT_VERSION=$(curl -s https://downloads.apache.org/tomcat/tomcat-10/ | grep -oP '(?<=href=")[0-9]+\.[0-9]+\.[0-9]+(?=/")' | sort -V | tail -n 1)
-TOMCAT_URL="https://downloads.apache.org/tomcat/tomcat-10/v$TOMCAT_VERSION/bin/apache-tomcat-$TOMCAT_VERSION.tar.gz"
-INSTALL_DIR="/opt/tomcat"
-# Téléchargement de la dernière version de Tomcat
-echo "Téléchargement de Tomcat $TOMCAT_VERSION..."
-sudo wget -O /tmp/apache-tomcat.tar.gz $TOMCAT_URL
-# Extraction des fichiers
-echo "Installation de Tomcat..."
-sudo mkdir -p $INSTALL_DIR
-sudo tar -xzf /tmp/apache-tomcat.tar.gz -C $INSTALL_DIR --strip-components=1
+openjdk version "17.0.8" 2023-07-18
+OpenJDK Runtime Environment (build 17.0.8+7-Debian-1deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.8+7-Debian-1deb12u1, mixed mode, sharing)
 
-# Attribution des permissions
-sudo chmod +x $INSTALL_DIR/bin/*.sh
-sudo chown -R $USER:$USER $INSTALL_DIR
-# Création du service systemd
-echo "Configuration du service Tomcat..."
-sudo tee /etc/systemd/system/tomcat.service > /dev/null <<EOF
-[Unit]
-Description=Apache Tomcat
-After=network.target
+# Installation de Tomcat 9 et des outils d'administration
+echo "Installation de Tomcat 9..."
+sudo apt install -y tomcat9 tomcat9-admin
 
-[Service]
-Type=forking
-User=$USER
-Group=$USER
-WorkingDirectory=$INSTALL_DIR
-ExecStart=$INSTALL_DIR/bin/startup.sh
-ExecStop=$INSTALL_DIR/bin/shutdown.sh
-Restart=always
+# Démarrer et activer Tomcat 9
+echo "Démarrage et activation de Tomcat 9..."
+sudo systemctl start tomcat9
+sudo systemctl enable tomcat9
 
-[Install]
-WantedBy=multi-user.target
-EOF
+# Vérifier le statut du service
+sudo systemctl status tomcat9 
 
-#Démarrer Tomcat
-sudo systemctl start tomcat10
-#Activer Tomcat au démarrage
-sudo systemctl enable tomcat10
-# Vérifier le status 
-sudo systemctl status tomcat
-echo "Tomcat $TOMCAT_VERSION a été installé avec succès et est en cours d'exécution."
-
-#Arrêter Tomca
-sudo systemctl stop tomcat
+# Afficher l'adresse d'accès à l'interface d'administration
+echo "Tomcat 9 est installé et en cours d'exécution."
+echo "Accédez à l'interface d'administration via : http://localhost:8080"
 
 # Execution 
 chmod +x installTomcat.sh
