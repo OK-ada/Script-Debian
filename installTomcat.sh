@@ -2,7 +2,7 @@
 
 # Vérifier si le script est exécuté en tant que root
 if [ "$EUID" -ne 0 ]; then
-  echo "Veuillez exécuter ce script avec sudo: sudo ./install_tomcat9.sh"
+  echo "Veuillez exécuter ce script avec sudo: sudo ./installTomcat.sh"
   exit 1
 fi
 

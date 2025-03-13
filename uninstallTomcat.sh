@@ -1,27 +1,26 @@
 #!/bin/bash
 
-# Désinstallation de Tomcat
+# Vérifier si le script est exécuté en tant que root
+if [ "$EUID" -ne 0 ]; then
+  echo "Veuillez exécuter ce script avec sudo: sudo ./uninstall_tomcat9.sh"
+  exit 1
+fi
 
-echo "Arrêt du service Tomcat..."
-sudo systemctl stop tomcat10
+# Arrêter le service Tomcat
+systemctl stop tomcat9
 
-echo "Désactivation du démarrage automatique de Tomcat..."
-sudo systemctl disable tomcat10
+# Désactiver le service Tomcat
+systemctl disable tomcat9
 
-echo "Suppression de Tomcat..."
-sudo apt remove --purge -y tomcat10 tomcat10-admin tomcat10-docs tomcat10-examples
+# Supprimer Tomcat 9 et Tomcat 9 Admin
+apt remove -y tomcat9 tomcat9-admin
+apt autoremove -y
 
-echo "Suppression des fichiers de configuration restants..."
-sudo apt autoremove -y
-sudo apt clean
+# Supprimer les fichiers de configuration restants
+rm -rf /etc/tomcat9 /var/lib/tomcat9 /var/log/tomcat9
 
-echo "Suppression des fichiers Tomcat..."
-sudo rm -rf /etc/tomcat10
-sudo rm -rf /var/lib/tomcat10
-sudo rm -rf /usr/share/tomcat10
-sudo rm -rf /var/log/tomcat10
-
-echo "Tomcat a été désinstallé avec succès."
+# Vérification de la suppression
+echo "Tomcat 9 et ses composants ont été désinstallés avec succès."
 
 # Lancer le script 
 #chmod +x uninstallTomcat.sh

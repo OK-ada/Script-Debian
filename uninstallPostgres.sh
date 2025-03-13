@@ -18,6 +18,7 @@ sudo rm -rf /var/lib/postgresql
 sudo rm -rf /var/log/postgresql
 
 echo "PostgreSQL a été désinstallé avec succès."
+
 # Lancer le script 
 #chmod +x uninstallPostgres.sh
 #./uninstallPostgres.sh
