@@ -1,0 +1,63 @@
+Script démarré sur 2025-03-13 19:56:34+01:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ ./installPostgres.sh [7@chmod +x [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pd Script-Debian/[7PBureau/./installpgAdmin4.sh [7@chmod +x [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KstallTomcat.sh 
+[?2004l[?2004h]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ ./installTomcat.sh 
+[?2004lVeuillez exécuter ce script avec sudo: sudo ./installTomcat.sh
+[?2004h]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ sudo ./installTomcat.sh 
+[?2004l[sudo] Mot de passe de devel : 
+[33m0% [En cours][0m             Atteint :1 http://deb.debian.org/debian bookworm InRelease
+             Atteint :2 http://security.debian.org/debian-security bookworm-security InRelease
+[33m0% [En cours][0m             Atteint :3 http://deb.debian.org/debian bookworm-updates InRelease
+[33m0% [En cours][0m[33m0% [Connexion à ftp.postgresql.org][0m[33m0% [Connexion à ftp.postgresql.org][0m[33m0% [Connexion à ftp.postgresql.org][0m                                    Réception de :4 https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/bookworm pgadmin4 InRelease [4 217 B]
+[33m0% [4 InRelease 4 217 B/4 217 B 100%][0m[33m                                         0% [En cours][0m[33m100% [En cours][0m               4 217 o réceptionnés en 1s (4 514 o/s)
+Lecture des listes de paquets… 0%Lecture des listes de paquets… 0%Lecture des listes de paquets… 0%Lecture des listes de paquets… 49%Lecture des listes de paquets… 49%Lecture des listes de paquets… 62%Lecture des listes de paquets… 62%Lecture des listes de paquets… 94%Lecture des listes de paquets… 94%Lecture des listes de paquets… 95%Lecture des listes de paquets… 95%Lecture des listes de paquets… 95%Lecture des listes de paquets… 95%Lecture des listes de paquets… 96%Lecture des listes de paquets… 96%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 97%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets… 98%Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances… 0%Construction de l'arbre des dépendances… 0%Construction de l'arbre des dépendances… 0%Construction de l'arbre des dépendances… 50%Construction de l'arbre des dépendances… 50%Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état… 0%          Lecture des informations d'état… 0%Lecture des informations d'état... Fait
+32 paquets peuvent être mis à jour. Exécutez « apt list --upgradable » pour les voir.
+Lecture des listes de paquets… 0%Lecture des listes de paquets… 100%Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances… 0%Construction de l'arbre des dépendances… 0%Construction de l'arbre des dépendances… 50%Construction de l'arbre des dépendances… 50%Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état… 0%          Lecture des informations d'état… 0%Lecture des informations d'état... Fait
+Aucune version du paquet tomcat9 n'est disponible, mais il existe dans la base
+de données. Cela signifie en général que le paquet est manquant, qu'il est devenu obsolète
+ou qu'il n'est disponible que sur une autre source
+
+[1;31mE: [0mLe paquet « tomcat9 » n'a pas de version susceptible d'être installée[0m
+[1;31mE: [0mImpossible de trouver le paquet tomcat9-admin[0m
+Created symlink /etc/systemd/system/multi-user.target.wants/tomcat9.service → /etc/systemd/system/tomcat9.service.
+[0;1;31mJob for tomcat9.service failed because the control process exited with error code.[0m
+[0;1;31mSee "systemctl status tomcat9.service" and "journalctl -xeu tomcat9.service" for details.[0m
+● tomcat9.service - Apache Tomcat 9
+     Loaded: loaded (]8;;file://devalgem1/etc/systemd/system/tomcat9.service/etc/systemd/system/tomcat9.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: activating (auto-restart) (Result: exit-code) since Thu 2025-03-13 19:57:17 CET; 42ms ago
+    Process: 3534 ExecStart=/opt/tomcat9/bin/startup.sh [0;1;31m(code=exited, status=203/EXEC)[0m
+        CPU: 1ms
+Tomcat 9 et Tomcat 9 Admin ont été installés avec succès !
+Accédez à l'interface d'administration sur : http://localhost:8080/manager/html (nécessite configuration des utilisateurs)
+[?2004h]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ apt-cache search tomcar[Kt
+[?2004llibapache-mod-jk-doc - documentation du paquet libapache2-mod-jk
+libapache2-mod-jk - connecteur Apache 2 pour le moteur de servlet Java de Tomcat
+yasat - outil simple et stupide d’audit
+centreon-plugins - Collection of Nagios plugins to monitor OS, services and network devices
+libjnlp-servlet-java - simple and convenient packaging format for JNLP applications
+libspring-instrument-java - modular Java/J2EE application framework - Instrumentation
+liblogback-java - flexible logging library for Java
+liblogback-java-doc - flexible logging library for Java - documentation
+monitoring-plugins-contrib - Plugins for nagios compatible monitoring systems
+libnetty-tcnative-java - Tomcat native fork for Netty
+libnetty-tcnative-jni - Tomcat native fork for Netty (JNI library)
+python3-ajpy - Python module to craft AJP requests
+resource-agents - Cluster Resource Agents
+tomcat-jakartaee-migration - Apache Tomcat migration tool for Jakarta EE
+libtcnative-1 - Tomcat native library using the Apache Portable Runtime
+libtomcat10-embed-java - Apache Tomcat 10 - Servlet and JSP engine -- embed libraries
+libtomcat10-java - Apache Tomcat 10 - Servlet and JSP engine -- core libraries
+tomcat10 - Apache Tomcat 10 - Servlet and JSP engine
+tomcat10-admin - Apache Tomcat 10 - Servlet and JSP engine -- admin web applications
+tomcat10-common - Apache Tomcat 10 - Servlet and JSP engine -- common files
+tomcat10-docs - Apache Tomcat 10 - Servlet and JSP engine -- documentation
+tomcat10-examples - Apache Tomcat 10 - Servlet and JSP engine -- example web applications
+tomcat10-user - Apache Tomcat 10 - Servlet and JSP engine -- tools to create user instances
+libtomcat9-java - Apache Tomcat 9 - Servlet and JSP engine -- core libraries
+[?2004h]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ [K]0;devel@devalgem1: ~/Bureau/Script-Debian[01;32mdevel@devalgem1[00m:[01;34m~/Bureau/Script-Debian[00m$ exit
+[?2004lexit
+
+Script terminé sur 2025-03-13 20:00:54+01:00 [COMMAND_EXIT_CODE="0"]
