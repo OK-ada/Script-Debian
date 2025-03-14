@@ -36,6 +36,11 @@ source /etc/profile.d/tomcat9.sh
 opt/tomcat9/bin/startup.sh
 # Afficher le message de réussite
 echo "Accédez à l'interface d'administration sur : http://localhost:8080 (nécessite configuration des utilisateurs)"
+# Activer le service 
+systemctl daemon-reload
+systemctl enable --now tomcat9
+# le status 
+systemctl status tomcat9
 
 # Execution 
 #chmod +x installTomcat.sh
