@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Mettre à jour les paquets
 sudo apt update && sudo apt upgrade -y
 
@@ -14,14 +15,17 @@ sudo useradd -m -d /opt/tomcat9 -U -s /bin/false tomcat
 
 # Télécharger et installer Tomcat 9
 VER=9.0.102
-sudo cd /tmp
+cd /tmp
 wget https://dlcdn.apache.org/tomcat/tomcat-9/v${VER}/bin/apache-tomcat-${VER}.tar.gz
 
-sudo tar xzf apache-tomcat-${VER}.tar.gz -C /opt/tomcat9 --strip-components=1
+tar xzf apache-tomcat-${VER}.tar.gz -C /opt/tomcat9 --strip-components=1
 
 # Fixer les permissions
 sudo chown -R tomcat:tomcat /opt/tomcat9
 sudo chmod -R 755 /opt/tomcat9
+
+# Installer Tomcat 9 Admin
+sudo apt install -y tomcat9-admin
 
 # Créer le fichier de service systemd
 sudo bash -c 'cat > /etc/systemd/system/tomcat.service << EOF
@@ -53,8 +57,3 @@ sudo systemctl status tomcat --no-pager
 
 # Afficher le message de réussite
 echo "Accédez à Tomcat sur : http://localhost:8080"
-
-
-# Execution 
-#chmod +x installTomcat.sh
-#./installTomcat.sh
