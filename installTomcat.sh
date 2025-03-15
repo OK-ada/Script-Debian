@@ -15,7 +15,7 @@ sudo useradd -m -d /opt/tomcat9 -U -s /bin/false tomcat
 # Télécharger et installer Tomcat 9
 VER=9.0.102
 sudo cd /tmp
-sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v${VER}/bin/apache-tomcat-${VER}.tar.gz
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v${VER}/bin/apache-tomcat-${VER}.tar.gz
 
 sudo tar xzf apache-tomcat-${VER}.tar.gz -C /opt/tomcat9 --strip-components=1
 
