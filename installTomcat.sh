@@ -22,7 +22,7 @@ mkdir -p /opt/tomcat9
 useradd -m -d /opt/tomcat9 -U -s /bin/false tomcat
 
 # Télécharger et installer Tomcat 9
-echo "Téléchargement et installation de Tomcat 9..."
+echo "Téléchargement et Tomcat 9..."
 VER=9.0.102
 cd /tmp
 wget https://dlcdn.apache.org/tomcat/tomcat-9/v${VER}/bin/apache-tomcat-${VER}.tar.gz
@@ -35,7 +35,7 @@ chown -R tomcat:tomcat /opt/tomcat9
 chmod -R 755 /opt/tomcat9
 
 # Installer Tomcat 9 Admin
-echo "Installation de Tomcat 9 Admin..."
+echo "Installation de Tomcat 9 ..."
 sudo apt install -y tomcat9-admin
 
 # Créer le fichier de service systemd
